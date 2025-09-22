@@ -1,0 +1,12 @@
+<div class="artist-detail-banner">
+  <div
+    class="artist-detail-banner__bg"
+    [ngStyle]="{'background-image': 'url(' + artist.images[0].url + ')'}">
+  </div>
+
+  <div class="artist-detail-banner__info">
+    <h2 class="artist-detail-banner__name">{{ artist.name }}</h2>
+    <p class="artist-detail-banner__followers">{{ artist.followers.total | number }} Followers</p>
+    <p class="artist-detail-banner__genres">{{ artist.genres.join(', ') || 'No genres' }}</p>
+  </div>
+</div>

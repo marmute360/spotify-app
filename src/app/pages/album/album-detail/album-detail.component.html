@@ -1,0 +1,55 @@
+<div class="album-detail">
+
+<div class="album-detail__back" (click)="goBack()">
+  <span class="album-detail__back-icon">＜</span>
+  <span class="album-detail__back-text">Voltar</span>
+</div>
+
+  <div class="album-detail__banner" [ngStyle]="{'background-image': 'url(' + album.images[0].url + ')'}">
+    <div class="album-detail__overlay"></div>
+    <div class="album-detail__banner-info">
+      <h2 class="album-detail__title">{{ album.name }}</h2>
+      <p class="album-detail__artists">{{ artistNames }}</p>
+      <p class="album-detail__meta">{{ albumTypeFormatted }} • {{ album.total_tracks }} faixa(s)</p>
+    </div>
+  </div>
+
+  <div class="album-detail__tracks-container" *ngIf="album?.tracks?.items?.length">
+
+    <div *ngIf="album?.tracks?.items?.length === 1" class="album-detail__single-track">
+      <div class="album-detail__track-card">
+        <span class="album-detail__track-number">1</span>
+        <span class="album-detail__track-name">{{ album.tracks.items[0].name }}</span>
+        <a
+          *ngIf="album?.tracks?.items[0]?.external_urls?.spotify"
+          class="album-detail__track-play"
+          [href]="album.tracks.items[0].external_urls.spotify"
+          target="_blank"
+          title="Ouvir no Spotify">
+          ▶
+        </a>
+      </div>
+    </div>
+
+    <ul *ngIf="album.tracks.items.length > 1" class="album-detail__track-list">
+      <li *ngFor="let track of album.tracks.items; let i = index" class="album-detail__track-card">
+        <span class="album-detail__track-number">{{ i + 1 }}</span>
+        <span class="album-detail__track-name">{{ track.name }}</span>
+        <a
+          *ngIf="track.external_urls?.spotify"
+          class="album-detail__track-play"
+          [href]="track.external_urls.spotify"
+          target="_blank"
+          title="Tocar no Spotify">
+          ▶
+        </a>
+      </li>
+    </ul>
+
+  </div>
+
+  <p class="album-detail__external">
+    <a [href]="album.external_urls.spotify" target="_blank">Abrir em Spotify</a>
+  </p>
+
+</div>

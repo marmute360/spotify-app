@@ -1,0 +1,10 @@
+    <div class="card" (click)="click.emit()">
+      <img *ngIf="imageUrl; else placeholder" [src]="imageUrl" [alt]="title" class="card__image">
+      <ng-template #placeholder>
+        <div class="card__placeholder">No Image</div>
+      </ng-template>
+      <div class="card__info">
+        <h3 class="card__title">{{ title }}</h3>
+        <button class="card__button">Ver Detalhes</button>
+      </div>
+    </div>

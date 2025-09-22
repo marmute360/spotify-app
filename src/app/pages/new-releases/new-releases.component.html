@@ -1,0 +1,39 @@
+<div class="new-releases-page">
+  <app-spinner ></app-spinner>
+
+      <div class="section-divider">
+        <span class="section-divider__text">Lançamentos</span>
+    </div>
+
+    <div class="album-list">
+      <app-card
+        *ngFor="let album of albums"
+        [title]="album.name"
+        [subtitle]="getArtistNames(album)"
+        [imageUrl]="album.images[0].url"
+        (click)="goToAlbum(album.id)">
+      </app-card>
+    </div>
+
+    <div *ngIf="!isLoading && albums.length === 0" class="no-results">
+      <div class="no-results__content">
+        <div class="no-results__icon">🎵</div>
+        <h2 class="no-results__title">Nenhum resultado encontrado</h2>
+        <p class="no-results__subtitle">
+          Nenhum álbum encontrado<br>
+          Tente pesquisar outro!
+        </p>
+      </div>
+    </div>
+
+    <div class="load-more-container">
+      <app-button
+        [label]="isLoadingButton ? 'Carregando...' : 'Carregar mais'"
+        [size]="'medium'"
+        [status]="'secondary'"
+        [disabled]="isLoadingButton"
+        (click)="loadMore()">
+      </app-button>
+    </div>
+
+</div>

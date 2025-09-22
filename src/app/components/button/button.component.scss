@@ -1,0 +1,51 @@
+@use '../../../variable.scss';
+
+
+.button-small {
+  padding: 8px 16px;
+  font-size: 12px;
+}
+
+.button-medium {
+  padding: 10px 20px;
+  font-size: 14px;
+}
+
+.button-large {
+  padding: 12px 24px;
+  font-size: 16px;
+}
+
+
+.button-primary {
+  background-color: variable.$primary-color;
+  color: variable.$button-text-color;
+  border: 2px solid variable.$button-border-color;
+}
+
+.button-secondary {
+  background-color: variable.$secondary-color;
+  color: variable.$button-text-color;
+  border: 2px solid variable.$button-border-color;
+}
+
+
+button:hover:not(:disabled) {
+  opacity: 0.8;
+  cursor: pointer;
+}
+
+
+button {
+  border-radius: 5px;
+  border: none;
+  font-weight: bold;
+  transition: opacity 0.3s ease, filter 0.3s ease;
+}
+
+
+button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  filter: brightness(0.9);
+}

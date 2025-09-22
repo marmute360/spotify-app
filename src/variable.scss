@@ -1,0 +1,29 @@
+// Cores Principais 
+$primary-color: #1DB954;   // Verde do Spotify
+$secondary-color: #1ed760;  // Cor secundária
+$text-color: #ffffff;      // Cor do texto principal
+$background-color: #121212; // Cor de fundo escuro
+$button-text-color: #ffffff; // Cor do texto do botão
+$button-border-color: #1DB954; // Cor da borda dos botões
+
+// Cores Secundárias 
+$input-bg-color: #333333;  // Cor de fundo dos inputs
+$card-bg-color: #1f1f1f;   // Cor de fundo dos cards
+$spinner-color: #1DB954;   // Cor do spinner
+
+//Tipografia
+$font-family: 'Arial', sans-serif;  // Fonte do projeto
+$font-size-base: 16px;  // Tamanho de fonte base
+$font-size-large: 2rem;  // Fonte grande (para títulos)
+$font-size-medium: 1.2rem;  // Fonte média
+$font-size-small: 1rem;  // Fonte pequena
+
+// Tamanhos e Espaçamentos 
+$max-width: 1200px;  // Largura máxima do conteúdo
+$spacing-base: 20px;  // Espaçamento base entre os elementos
+$spacing-small: 10px;  // Espaçamento pequeno
+$spacing-large: 40px;  // Espaçamento grande
+
+// Bordas e Sombras 
+$border-radius: 10px;  // Bordas arredondadas
+$box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);  // Sombra para cards e outros elementos

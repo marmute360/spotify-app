@@ -1,0 +1,61 @@
+@use '../../../variable.scss';  
+
+
+.album-container {
+  display: flex;
+  flex-direction: column;
+  gap: variable.$spacing-base;
+  padding: variable.$spacing-large;
+}
+
+
+.album-detail {
+  text-align: center;
+  margin-bottom: variable.$spacing-large;
+}
+
+
+.album-detail__image {
+  max-width: 250px;
+  border-radius: variable.$border-radius;
+  margin-bottom: variable.$spacing-base;
+}
+
+
+.album-detail__title {
+  font-size: variable.$font-size-large;
+  font-weight: bold;
+  margin-bottom: variable.$spacing-small;
+}
+
+
+.album-detail__release-date {
+  font-size: variable.$font-size-medium;
+  color: #aaa;
+  margin-bottom: variable.$spacing-small;
+}
+
+
+.album-detail__tracks {
+  font-size: variable.$font-size-small;
+  color: #aaa;
+}
+
+.album-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: variable.$spacing-base;
+}
+
+
+.album-list__card {
+  background-color: variable.$card-bg-color;
+  padding: variable.$spacing-small;
+  border-radius: variable.$border-radius;
+  box-shadow: variable.$box-shadow;
+  transition: transform 0.3s ease;
+}
+
+.album-list__card:hover {
+  transform: translateY(-5px);
+}

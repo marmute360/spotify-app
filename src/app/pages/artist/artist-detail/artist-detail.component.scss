@@ -1,0 +1,52 @@
+@use '../../../../variable.scss';
+
+.artist-detail-banner {
+  position: relative;
+  width: 100%;
+  max-width: 1600px;  
+  height: 400px;     
+  margin: 0 auto;
+  border-radius: 8px;
+  overflow: hidden;
+
+  &__bg {
+    width: 100%;
+    height: 100%;
+    background-position: center center;
+    background-size: cover;   
+    background-repeat: no-repeat;
+  }
+
+  &__info {
+    position: absolute;
+    bottom: 16px;
+    right: 16px;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 16px;
+    border-radius: 8px;
+    font-family: variable.$font-family;
+    color: #fff;
+    max-width: 300px;
+
+    @media (max-width: 768px) {
+      bottom: 8px;
+      right: 8px;
+      padding: 12px;
+      max-width: 200px;
+    }
+  }
+
+  &__name {
+    font-size: 2rem;
+    font-weight: bold;
+    margin: 0 0 4px 0;
+  }
+
+  &__followers,
+  &__genres {
+    font-size: 1rem;
+    margin: 2px 0;
+    font-family: variable.$font-family;
+    color: #b3b3b3;
+  }
+}

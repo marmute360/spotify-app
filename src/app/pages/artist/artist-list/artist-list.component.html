@@ -1,0 +1,10 @@
+<div class="album-list">
+  <app-card 
+    *ngFor="let album of albums" 
+    [title]="album.name" 
+    [imageUrl]="album.images[0].url" 
+    [subtitle]="album.release_date"
+    (click)="goToAlbumDetail(album.id)"
+    >
+  </app-card>
+</div>

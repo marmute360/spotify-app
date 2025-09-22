@@ -1,0 +1,41 @@
+<app-spinner></app-spinner>
+
+
+  <div class="artist-page">
+
+    <div class="artist-page__back" (click)="goBack()">
+    <span class="artist-page__back-icon">＜</span>
+    <span class="artist-page__back-text">Voltar</span>
+    </div>
+
+    <div *ngIf="artistData" class="artist-page__detail">
+      <app-artist-detail [artist]="artistData"></app-artist-detail>
+    </div>
+
+    <div *ngIf="artistAlbumsData.length > 0" class="artist-page__albums">
+      <h2 class="artist-page__albums--title">Álbuns: </h2>
+      <app-artist-list [albums]="artistAlbumsData"></app-artist-list>
+
+      <div class="artist-page__load-more">
+        <app-button
+          [label]="limitLoadMore ? 'Todos os albúns listados' :(isLoadingButton ? 'Carregando...' : 'Carregar mais')"
+          [size]="'medium'"
+          [status]="'secondary'"
+          [disabled]="isLoadingButton || limitLoadMore"
+          (click)="loadMoreAlbums()">
+        </app-button>
+      </div>
+    </div>
+
+
+    <div *ngIf="artistAlbumsData?.length === 0" class="no-results">
+      <div class="no-results__content">
+        <div class="no-results__icon">🎵</div>
+        <h2 class="no-results__title">Nenhum resultado encontrado</h2>
+        <p class="no-results__subtitle">
+          Nenhum álbum encontrado
+        </p>
+      </div>
+    </div>
+
+  </div>

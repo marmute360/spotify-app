@@ -1,0 +1,36 @@
+<header class="header">
+  <div routerLink="/" class="header__logo">
+    <svg
+      width="32"
+      height="32"
+      viewBox="0 0 168 168"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <circle cx="84" cy="84" r="84" fill="#1DB954"/>
+      <path d="M46 60.5C72.5 73 104 68 122 66.5" stroke="white" stroke-width="10" stroke-linecap="round"/>
+      <path d="M50 84C74 95.5 104 90 124 88" stroke="white" stroke-width="10" stroke-linecap="round"/>
+      <path d="M52 107C78 118 106 112 126 110" stroke="white" stroke-width="10" stroke-linecap="round"/>
+    </svg>
+  </div>
+
+  <nav class="header__nav">
+    <a 
+      routerLink="/" 
+      routerLinkActive="header__nav-link--active"
+      [routerLinkActiveOptions]="{ exact: true }"
+      class="header__nav-link">
+      Início
+    </a>
+    <a 
+      routerLink="/lancamentos" 
+      routerLinkActive="header__nav-link--active"
+      class="header__nav-link">
+      Lançamentos
+    </a>
+  </nav>
+
+  
+  <div class="header__actions">
+  </div>
+</header>

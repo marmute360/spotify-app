@@ -1,0 +1,6 @@
+<button
+      [ngClass]="[sizeClass, statusClass]"
+      [disabled] = disabled
+      (click)="click.emit()">
+      {{ label }}
+</button>

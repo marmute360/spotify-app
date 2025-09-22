@@ -1,0 +1,80 @@
+@use '../../../variable.scss';
+
+
+.artist-page {
+  display: flex;
+  flex-direction: column;
+  gap: variable.$spacing-large; 
+  padding: variable.$spacing-large;
+  padding-top: 60px;
+
+  @media (max-width: 768px) {
+    padding: variable.$spacing-base;
+    padding-top: 56px;
+    gap: variable.$spacing-base;
+  }
+
+  &__detail {
+    margin-bottom: variable.$spacing-small; 
+     
+  }
+
+  &__albums {
+    display: flex;
+    flex-direction: column;
+    gap: variable.$spacing-base;
+    &--title {
+        color: #fff;
+        font-size: 20pt;
+        font-family: variable.$font-family;
+    }
+  }
+
+  &__load-more {
+    text-align: center;
+    margin-top: variable.$spacing-base;
+  }
+
+   &__back {
+        position: absolute; 
+        top: 98px;
+        left: 16px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        cursor: pointer;
+        color: #ddd;
+        font-weight: bold;
+        z-index: 10; 
+        transition: color 0.2s ease;
+
+        &:hover {
+            color: #00ff96;
+        }
+
+        &-icon {
+            font-size: 1.2rem;
+        }
+
+        &-text {
+            font-size: 1rem;
+        }
+        }
+
+        
+        @media (max-width: 768px) {
+        .album-detail__back {
+            top: 8px;
+            left: 8px;
+            gap: 6px;
+
+            &-icon {
+            font-size: 1rem;
+            }
+
+            &-text {
+            font-size: 0.9rem;
+            }
+        }
+    }
+}

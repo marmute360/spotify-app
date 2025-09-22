@@ -1,0 +1,53 @@
+<div class="home-page">
+
+  <app-spinner></app-spinner>
+
+    <div class="search-container">
+      <input [(ngModel)]="searchQuery" placeholder="Pesquisar por artista" class="search-container__input" />
+      <app-button
+        [label]="'Pesquisar'"
+        [size]="'medium'"
+        [status]="'primary'"
+        (click)="searchArtist()">
+      </app-button>
+    </div>
+
+
+    <div class="section-divider">
+        <span class="section-divider__text">Artistas</span>
+    </div>
+
+
+    <div class="artist-list">
+    <app-card
+        *ngFor="let artist of artists"
+        [title]="artist.name"
+        [subtitle]="artist.genres.join(', ')"
+        [imageUrl]="artist.images[0]?.url"
+        (click)="goToArtistDetail(artist.id)">
+    </app-card>
+    </div>
+
+    <div *ngIf="artists.length === 0" class="no-results">
+        <div class="no-results__content">
+            <div class="no-results__icon">🎵</div>
+            <h2 class="no-results__title">Nenhum resultado encontrado</h2>
+            <p class="no-results__subtitle">
+            Nenhum artista encontrado<br>
+            Tente pesquisar outro artista!
+            </p>
+        </div>
+    </div>
+
+
+    <div  class="load-more-container">
+        <app-button
+            [label]="isLoadingButton ? 'Carregando...' : 'Carregar mais'"
+            [size]="'medium'"
+            [status]="'secondary'"
+            [disabled]="isLoadingButton"
+            (click)="loadMoreArtists()">
+        </app-button>
+    </div>
+
+</div>
