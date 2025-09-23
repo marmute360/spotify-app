@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { BehaviorSubject, Observable, of } from 'rxjs';
 import { map, tap } from 'rxjs/operators';
+import { environment } from '../../environments/environments';
 
 @Injectable({
   providedIn: 'root'
@@ -10,8 +11,9 @@ export class AuthService {
   private tokenSubject = new BehaviorSubject<string | null>(null);
   private tokenExpirationKey = 'spotify_token_expiration';
   private tokenKey = 'spotify_token';
-  private clientId = '455bfba1f01540bca19eb83efbc850a8';
-  private clientSecret = '576cc4edd35d40b49394e1c8e5ca052a';
+
+private clientId = environment.spotifyClientId;
+private clientSecret = environment.spotifyClientSecret;
 
   constructor(private http: HttpClient) {
     const token = sessionStorage.getItem(this.tokenKey);

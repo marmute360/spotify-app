@@ -1,59 +1,106 @@
-# SpotifyApp
+# Spotify App
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.13.
+![Spotify Logo](https://upload.wikimedia.org/wikipedia/commons/1/19/Spotify_logo_without_text.svg)
 
-## Development server
+## Descrição
 
-To start a local development server, run:
+Este projeto é uma aplicação web desenvolvida em **Angular** que consome a **API do Spotify** para listar artistas, álbuns e músicas, além de exibir novos lançamentos. A aplicação apresenta destaque para os banners de artistas e álbuns, listagem de tracks com ícones de play, e navegação intuitiva.
 
+O app foi criado com foco em:
+- **Visualização:** banners com overlay e efeitos.
+- **Responsividade:** adaptação entre desktop e mobile.
+- **Experiência do usuário:** indicadores de loading, mensagens de feedback e navegação simples.
+
+---
+
+## Funcionalidades
+
+- Listagem de artistas populares com filtros por popularidade e presença de imagem.
+- Visualização detalhada do artista, incluindo seguidores, gêneros e lista de álbuns.
+- Detalhes do álbum com banner, informações e listagem de faixas.
+- Reprodução de tracks diretamente no Spotify através de links externos.
+- Listagem de **New Releases**, navegando para detalhes do álbum.
+- Sistema de loading centralizado com **Spinner** baseado em Observable.
+- Botões de "Carregar mais" com comportamento fluido, mantendo itens já carregados.
+- Navegação com header fixo, incluindo links para Home e New Releases.
+- Layout moderno com CSS BEM, gradientes e efeitos de hover.
+
+---
+
+## Tecnologias Utilizadas
+
+- **Framework:** Angular 19 (standalone e modules)
+- **Linguagens:** TypeScript, SCSS, HTML
+- **HTTP & API:** HttpClient, Spotify Web API
+- **Testes:** Karma e Jasmine
+- **State Management:** BehaviorSubject via PagesPresenter
+- **Controle de autenticação:** AuthService com token armazenado em sessionStorage
+- **Design:** CSS BEM, responsivo, efeitos visuais em banners e cards
+
+---
+
+## **Passos para Rodar a Aplicação**
+
+### **Pré-requisitos**
+Antes de começar, é necessário ter o **Node.js** instalado na sua máquina. Você pode verificar se o Node.js está instalado rodando o comando:
+
+```bash
+node -v
+```
+**obs**: Foi utilizado a versão `v20.10.0`
+## 1. Clonar o Repositório
+
+  Clone este repositório para sua máquina local:
+```bash
+git clone git@github.com:marmute360/spotify-app.git 
+```
+## 2. Instalar as Dependências
+
+  Navegue até o diretório do projeto e instale as dependências do Node.js:
+```bash
+cd seu-repositorio
+npm install
+```
+
+## 3. Adicionar credenciais para acessar API do Spotify
+   
+   **Caminho da pasta: src/environments/environments.ts**
+```bash
+export const environment = {
+  production: false,
+  spotifyClientId: {{client_id}},
+  spotifyClientSecret: {{client_secret}}
+};
+
+```
+
+## 4. Rodar a Aplicação
+
+  Depois de instalar as dependências, você pode rodar a aplicação localmente com o seguinte comando:
 ```bash
 ng serve
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+**A aplicação estará disponível em http://localhost:4200/.**
 
-## Code scaffolding
+## Testes
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+Este projeto inclui testes automatizados utilizando Jasmine e Karma.
 
-```bash
-ng generate component component-name
-```
+Rodar os Testes
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
+Para rodar os testes, execute o seguinte comando:
 ```bash
 ng test
 ```
 
-## Running end-to-end tests
+Isso irá abrir o Karma e rodar todos os testes do projeto.
 
-For end-to-end (e2e) testing, run:
 
-```bash
-ng e2e
-```
+## Deploy
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+Este projeto foi hospedado utilizando o Vercel. Você pode visualizar a aplicação no seguinte link:
 
-## Additional Resources
+**https://spotify-app-orcin-five.vercel.app/**
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+
